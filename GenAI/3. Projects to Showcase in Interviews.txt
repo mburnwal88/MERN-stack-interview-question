@@ -1,0 +1,21 @@
+You should have 2–3 strong end-to-end projects ready to discuss.
+
+Examples:
+
+1. Document Q&A Bot (RAG) → load PDFs, embed, store in vector DB, build chatbot.
+
+2. Custom Domain Chatbot → fine-tuned or RAG-based for customer support / e-commerce.
+
+3. Summarizer → multi-document summarization with streaming responses.
+
+4. Multi-agent workflow → e.g., a research assistant with LangChain agents.
+
+👉 Be ready to explain:
+
+    Tech stack used (Python, LangChain, FAISS, OpenAI API, etc.)
+
+    Architecture (ingestion pipeline, retrieval, response generation)
+
+    Challenges faced (latency, hallucination, cost)
+
+    Improvements made

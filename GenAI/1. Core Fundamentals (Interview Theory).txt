@@ -1,0 +1,40 @@
+You’ll be expected to know what, why, and when — not super deep research-level, but strong working knowledge.
+
+LLM Basics
+
+    What are LLMs? (Transformers, GPT, LLaMA, Mistral)
+
+    Tokenization & embeddings
+
+    Zero-shot, few-shot prompting
+
+    RAG vs Fine-tuning (differences, when to use which)
+
+Embeddings & Vector Search
+
+    What is an embedding?
+
+    Cosine similarity vs dot product
+
+    Popular vector DBs (Pinecone, FAISS, Weaviate, OpenSearch)
+
+    Hybrid search (BM25 + vectors)
+
+RAG (Retrieval-Augmented Generation)
+
+    Document chunking strategies
+
+    Indexing pipeline (split → embed → store → query → rank → LLM)
+
+    Handling hallucinations (grounding, confidence scores, citations)
+
+Fine-tuning / Adaptation
+
+    LoRA, QLoRA (parameter-efficient tuning)
+
+    Instruction tuning basics
+
+    Use cases (domain-specific chatbots, classification)
+
+
+    

@@ -1,0 +1,31 @@
+Here’s how companies will test you as a 1-year GenAI developer:
+
+📌 Conceptual Questions
+
+    What’s the difference between embeddings and tokens?
+
+    When do you use fine-tuning vs RAG?
+
+    Explain how vector search works in simple terms.
+
+    How would you reduce hallucinations?
+
+📌 Practical/Scenario Questions
+
+    Design a chatbot that answers questions from internal company documents.
+
+    How would you handle a PDF with 1000 pages for a Q&A system?
+
+    If the LLM is giving wrong answers, how would you debug/fix?
+
+    How would you deploy a GenAI app to handle 1000+ requests/min?
+
+📌 Coding/Hands-on
+
+    Parse text, chunk into sections, generate embeddings, insert into FAISS/Pinecone.
+
+    Call an LLM API and format structured JSON output.
+
+    Write a function to rank retrieved documents by cosine similarity.
+
+    

@@ -1,0 +1,180 @@
+🧠 GenAI Interview Questions & Answers (1-Year Experience)
+1. Core GenAI / LLM Fundamentals
+
+Q1. What is a Large Language Model (LLM)?
+👉 A deep learning model (usually Transformer-based) trained on massive text datasets to understand and generate human-like language.
+
+Q2. What is tokenization in LLMs?
+👉 Breaking text into smaller units (words, subwords, characters). LLMs process tokens, not raw text.
+
+Q3. What are embeddings?
+👉 Numeric vector representations of text (sentences, words, docs) capturing semantic meaning. Used for similarity search.
+
+Q4. Difference between embeddings and tokens?
+👉 Tokens are raw text units; embeddings are vectorized numerical meaning representations of text.
+
+Q5. RAG vs Fine-tuning?
+
+RAG → Keep base LLM fixed, connect external knowledge via embeddings/vector DB.
+
+Fine-tuning → Train the model weights on new domain data.
+
+2. Vector DB & Retrieval
+
+Q6. Name some popular vector databases.
+👉 FAISS, Pinecone, Weaviate, Milvus, OpenSearch, Chroma.
+
+Q7. How do you calculate similarity between embeddings?
+👉 Cosine similarity, Euclidean distance, dot product.
+
+Q8. What is hybrid search?
+👉 Combines keyword search (BM25) with semantic search (embeddings).
+
+Q9. What’s the role of chunking in RAG?
+👉 Large documents are broken into smaller chunks (e.g., 500 tokens) so embeddings can capture meaning efficiently.
+
+Q10. How do you reduce irrelevant retrievals in RAG?
+👉 Better chunking, metadata filtering, hybrid search, re-ranking retrieved docs.
+
+3. Practical / Development
+
+Q11. What is LangChain used for?
+👉 Framework to build LLM apps (chains, agents, memory, RAG pipelines).
+
+Q12. How do LangChain Agents work?
+👉 They use LLMs as reasoning engines to decide which tool/API to call.
+
+Q13. What is LlamaIndex?
+👉 A framework for data indexing + retrieval for LLMs, simplifies RAG pipeline creation.
+
+Q14. Explain how you would build a document Q&A chatbot.
+👉 Steps:
+
+Ingest document → chunk → generate embeddings
+
+Store in vector DB
+
+At query: embed query → retrieve top chunks → pass to LLM
+
+Generate grounded answer
+
+Q15. What’s prompt engineering?
+👉 Designing instructions for LLMs to guide responses effectively (zero-shot, few-shot, CoT).
+
+4. Fine-tuning & Adaptation
+
+Q16. What is LoRA fine-tuning?
+👉 Train low-rank adapter layers instead of full model → efficient fine-tuning.
+
+Q17. What’s QLoRA?
+👉 Quantized LoRA → allows fine-tuning large models on limited hardware using 4-bit precision.
+
+Q18. When should you use fine-tuning vs RAG?
+👉 Fine-tuning for style, format, classification tasks.
+👉 RAG for factual, knowledge-heavy tasks.
+
+Q19. What’s instruction tuning?
+👉 Fine-tuning a model on datasets of instructions + responses to make it follow human instructions better.
+
+Q20. What are risks of fine-tuning?
+👉 Overfitting, forgetting general knowledge, high compute cost.
+
+5. System Design (Junior-Level)
+
+Q21. Design a chatbot for company documents.
+👉 Architecture:
+
+Document ingestion → embeddings → vector DB
+
+Query embedding → retrieval → context → LLM
+
+Output answer with citations
+
+Q22. How would you handle a 1000-page PDF for a Q&A bot?
+👉 Chunking (e.g., 500 tokens), metadata tagging (page numbers), embeddings per chunk.
+
+Q23. How do you scale a GenAI app for 1000+ users/min?
+👉 Use API batching, prompt caching, async processing, load balancing, serverless deployment (AWS Lambda).
+
+Q24. How do you reduce hallucinations?
+👉 Provide grounding context, enforce output format, use guardrails (Guardrails.ai, RAIL).
+
+Q25. How do you monitor LLM outputs in production?
+👉 Log queries, responses, latency, feedback loop, track hallucination/error rates.
+
+
+
+6. Coding / Hands-On
+
+Q26. Write (Python) code to generate embeddings using Hugging Face/aws titan.
+Q27. Write code to compute cosine similarity.
+Q29. How would you stream responses from an LLM API in Node.js?
+👉 Use OpenAI’s streaming API with event handlers (on("data")).
+Q30. How do you parse structured JSON output from LLMs reliably?
+👉 Use “output formatting prompts” or a library like LangChain’s StructuredOutputParser.
+
+Q31. Tell me about a GenAI project you worked on.
+👉 Use STAR method (Situation, Task, Action, Result).
+
+Q32. What challenges did you face with LLMs?
+👉 Hallucinations, cost of API calls, latency.
+
+Q33. How did you optimize cost in your project?
+👉 Cached embeddings, minimized token usage, quantized models.
+
+Q34. What new things have you learned in the last year?
+👉 e.g., prompt engineering, RAG, fine-tuning, cloud deployment.
+
+Q35. Where do you see GenAI heading in the next 2–3 years?
+👉 More open-source LLM adoption, multi-modal AI, enterprise integration.
+
+Q39. What are guardrails in GenAI?
+Q40. How would you evaluate a GenAI system?
+
+
+9. Quick-Fire Concept Checks
+
+Q41. What is “hallucination”?
+👉 LLM generating false or unsupported information.
+
+Q42. What is temperature in LLMs?
+👉 Controls randomness in output (low = deterministic, high = creative).
+
+Q43. Difference between Top-K and Top-P sampling?
+👉 Top-K → pick from top K tokens.
+👉 Top-P → pick from tokens whose cumulative probability ≥ P.
+
+Q44. What is a context window?
+👉 Maximum number of tokens an LLM can process at once.
+
+Q45. What is prompt injection?
+👉 Malicious prompts that override system instructions.
+
+
+10. Extra 5 for Deep Dives
+
+Q46. How do embeddings improve search vs keyword search?
+Q47. How do you handle multilingual queries in GenAI apps?
+Q48. How do you integrate LLMs with existing microservices?
+Q49. Difference between open-source LLMs vs closed-source APIs?
+Q50. How do you debug when your LLM app gives inconsistent answers?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

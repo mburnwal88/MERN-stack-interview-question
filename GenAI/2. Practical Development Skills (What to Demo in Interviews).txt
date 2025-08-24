@@ -1,0 +1,30 @@
+At 1 year, interviewers expect you to have built and deployed GenAI apps.
+
+    Frameworks & Tools
+
+        LangChain (chains, agents, memory)
+
+        LlamaIndex (indexing documents for RAG)
+
+        Hugging Face (transformers, datasets, PEFT)
+
+        FastAPI / Express.js for serving models
+
+    Deployment Knowledge
+
+        Serving models (local vs cloud APIs)
+
+        Docker basics
+
+        AWS (Bedrock, Sagemaker), GCP (Vertex), Azure OpenAI
+
+    Cost & Performance
+
+        Token usage optimization (prompt compression, embeddings reuse)
+
+        Quantization (4-bit, 8-bit models)
+
+        Prompt caching
+
+
+        
