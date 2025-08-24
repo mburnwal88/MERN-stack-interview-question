@@ -1,0 +1,210 @@
+8-Week GenAI Interview Prep Roadmap
+
+Month 1 → Foundations + Core Skills
+Week 1: LLM Fundamentals
+	•	Learn how LLMs work (transformers, tokens, embeddings, context window).
+	•	Topics:
+	◦	Zero-shot, few-shot prompting
+	◦	Chain-of-thought reasoning
+	◦	When to use fine-tuning vs RAG
+	•	Hands-on:
+	◦	Call OpenAI or Bedrock API with Node.js.
+	◦	Write simple prompts → summarize, rephrase, classify text.
+
+Week 2: Embeddings + Vector Databases
+	•	Learn embeddings → cosine similarity → semantic search.
+	•	Explore vector DBs: FAISS, Pinecone, OpenSearch.
+	•	Hands-on Project #1:
+	◦	Ingest PDF/text into a vector DB.
+	◦	Build a simple search API (/search?query=...).
+
+Week 3: Retrieval-Augmented Generation (RAG)
+	•	Understand RAG architecture.
+	•	Learn chunking, embedding, retrieval, reranking.
+	•	Hands-on Project #2:
+	◦	Build a Q&A Chatbot over PDF docs.
+	◦	Stack: MERN + OpenSearch/Pinecone + Bedrock/OpenAI.
+
+Week 4: Agents & Tool Use
+	•	Learn LangChain / LlamaIndex basics.
+	•	How agents decide which tools (APIs, DBs) to call.
+	•	Hands-on Project #3:
+	◦	Build an AI Agent that:
+	▪	Answers from docs (RAG).
+	▪	Calls an API (e.g., Weather API or Support Ticket API).
+	◦	Show orchestration in action.
+
+Month 2 → Advanced + Interview Prep
+Week 5: Cloud Deployment
+	•	Learn AWS Bedrock + Lambda + API Gateway.
+	•	How to deploy GenAI APIs serverlessly.
+	•	Hands-on Project #4:
+	◦	Deploy your chatbot as a REST API in AWS Lambda.
+	◦	Frontend (React/Next.js) → calls Lambda API → Bedrock.
+
+Week 6: Scaling + Cost Optimization
+	•	Learn about:
+	◦	Latency issues (parallel retrieval, batching).
+	◦	Prompt optimization.
+	◦	Cost-saving strategies (embedding reuse, hybrid search).
+	•	Mock Qs:
+	◦	“How do you reduce hallucination?”
+	◦	“How do you choose between GPT-4 vs smaller models?”
+
+Week 7: System Design for GenAI
+	•	Practice GenAI system design interviews:
+	◦	Design a customer-support chatbot.
+	◦	Design a product recommendation engine.
+	◦	Design multi-agent orchestration (like AWS Strands).
+	•	Focus on:
+	◦	Components: API, vector DB, LLM, cache, logs.
+	◦	Trade-offs: RAG vs fine-tuning, managed vs open-source models.
+
+Week 8: Mock Interviews + Resume Finalization
+	•	Do mock interviews (Pramp, Interviewing.io, or with peers).
+	•	Finalize resume:
+	◦	Title: “Full-stack Developer (7 yrs) | Applied GenAI Engineer (1 yr)”.
+	◦	Highlight projects + cloud deployments.
+	•	Polish GitHub portfolio + LinkedIn.
+
+✅ Deliverables After 2 Months
+	•	4 Projects (Chatbot, Search Engine, Agent, Serverless API).
+	•	Resume with GenAI projects.
+	•	Interview-ready knowledge (RAG, embeddings, orchestration, cost/scaling).
+	•	Confidence to position as Applied GenAI Developer with 1 year exp.
+
+===============================================================================
+
+What You Already Have (Strong Points)
+	1	OpenSearch
+	◦	You stored product data in vector form + raw data for hybrid search.
+	◦	✅ Interview use-case: “I built a hybrid search engine with embeddings + keyword search using OpenSearch.”
+	2	AWS Bedrock Agent
+	◦	You worked on orchestration/agents.
+	◦	✅ Interview use-case: “I configured Bedrock Agents with tools and knowledge bases.”
+	3	AWS Titan Embedding Model
+	◦	You vectorized product data with Titan embeddings.
+	◦	✅ Interview use-case: “I chose Titan for embeddings because of native AWS integration.”
+	4	Google ADK (I assume you mean Google Ads API / SDK?)
+	◦	If yes → you integrated an external API/tool.
+	◦	✅ Interview use-case: “I integrated third-party APIs into an AI workflow.”
+
+🔹 Gap Areas You Still Need to Cover
+To position yourself as 1 year GenAI experience, you need breadth:
+	1	RAG pipeline end-to-end
+	◦	You already did storage + embeddings.
+	◦	Now show: chunking, retrieval, reranking, and merging answers with LLMs.
+	2	Multi-agent orchestration
+	◦	You used Bedrock Agent, but also try LangChain or LlamaIndex to show flexibility.
+	3	Cloud deployment
+	◦	Deploy GenAI services as serverless APIs (AWS Lambda + API Gateway).
+	4	System design knowledge
+	◦	Be able to explain trade-offs: RAG vs fine-tuning, OpenSearch vs Pinecone, Titan vs OpenAI embeddings.
+
+🔹 Tailored Roadmap (Based on Your Background)
+Month 1: Consolidate & Extend
+	•	Week 1-2 → RAG Pipeline
+	◦	Take your OpenSearch project and extend it:
+	▪	Add chunking & retrieval logic.
+	▪	Use Titan embeddings + Bedrock LLM to generate answers.
+	▪	Build a Q&A chatbot for product data.
+	◦	Stack: Node.js/Express + Bedrock + OpenSearch.
+	•	Week 3 → Multi-Agent Project
+	◦	Extend your Bedrock Agent project → create an agent with multiple tools:
+	▪	Tool 1: Query product knowledge (RAG with OpenSearch).
+	▪	Tool 2: Google Ads API (marketing insights).
+	▪	Tool 3: Dummy API (like warranty registration).
+	◦	This shows orchestration across tools.
+	•	Week 4 → Portfolio Polish
+	◦	Put your RAG chatbot + Agent demo on GitHub.
+	◦	Create short demo videos (2–3 min) for LinkedIn.
+
+Month 2: Advanced + Interview Prep
+	•	Week 5 → Cloud Deployment
+	◦	Deploy your chatbot as AWS Lambda REST API.
+	◦	Add simple React/Next.js UI.
+	•	Week 6 → Optimization
+	◦	Learn cost/latency reduction:
+	▪	Hybrid search (use BM25 + embeddings).
+	▪	Caching retrieved embeddings.
+	◦	Be ready for Qs like “How do you optimize search latency in OpenSearch?”.
+	•	Week 7 → System Design Practice
+	◦	Mock interview prep:
+	▪	Design e-commerce RAG system.
+	▪	Design multi-agent workflow with Bedrock.
+	◦	Be ready to explain scaling, security, monitoring.
+	•	Week 8 → Resume + Mock Interviews
+	◦	Finalize resume with 3 key GenAI projects (RAG Chatbot, Multi-Agent Orchestrator, Serverless Deployment).
+	◦	Do 2–3 mock interviews.
+
+🔹 Resume Positioning
+Title: “Full-stack Developer (7 yrs) | Applied GenAI Engineer (1 yr)”
+GenAI Highlights:
+	•	Built hybrid semantic search with AWS Titan embeddings + OpenSearch.
+	•	Developed AWS Bedrock Agent workflows integrating product knowledge and external APIs (Google Ads, Lambda).
+	•	Designed and deployed serverless GenAI API on AWS Lambda.
+===============================================================
+
+GenAI Interview Prep Question Bank
+1. Fundamentals of LLMs & AI
+	•	What is a transformer? Explain encoder, decoder, and attention with example.
+	•	What are tokens? How are tokens created for text and images?
+	•	What is an embedding? How are they computed, and why are they important for search?
+	•	Explain the concept of a context window. What happens if input exceeds it?
+	•	Why do we chunk text before embedding? Why do we need overlap?
+	•	Explain Zero-shot, Few-shot, Chain-of-Thought, ReAct prompting with examples.
+	•	What’s the difference between pre-training, fine-tuning, and instruction-tuning?
+	•	Explain hallucination in LLMs. How do you mitigate it?
+
+2. RAG (Retrieval-Augmented Generation)
+	•	What is RAG? How does it work end-to-end?
+	•	How do you decide chunk size and overlap for documents?
+	•	How does hybrid search (vector + keyword) improve accuracy?
+	•	In RAG, if top-10 results each have 4k tokens, how do you handle context limits?
+	•	Difference between vector search vs keyword search in OpenSearch.
+	•	Explain your workflow for embedding product data into OpenSearch.
+	•	How do you rank and re-rank retrieved documents?
+	•	What are some common challenges in RAG? (context overflow, embedding drift, retrieval errors)
+
+3. Fine-tuning vs RAG
+	•	When should you use RAG vs fine-tuning?
+	•	What are pros/cons of fine-tuning vs prompt engineering?
+	•	Give an example where fine-tuning is better than RAG.
+	•	How would you fine-tune an embedding model like Titan for domain-specific search?
+
+4. AWS & Bedrock (your strength 💪)
+	•	What is an AWS Bedrock Agent? How does it work internally?
+	•	How is Bedrock Agent different from Strands?
+	•	What is an Action Group in Bedrock?
+	•	How does Bedrock handle tool calling (ReAct style)?
+	•	Which embedding model did you use (Titan)? Why did you choose it?
+	•	How would you integrate Bedrock Agent with OpenSearch knowledge base?
+	•	How does AWS Strands route queries between agents?
+
+5. Vector Databases & OpenSearch
+	•	How did you store raw + vector data in OpenSearch for hybrid search?
+	•	How do you design schema in OpenSearch for multi-vector fields (title, description, ingredients)?
+	•	What is the advantage of per-field embeddings vs one big embedding?
+	•	How do you run a semantic + keyword combined query in OpenSearch?
+	•	How do you handle updates/deletes of vector embeddings in OpenSearch?
+
+6. Applied GenAI Scenarios
+	•	Design a GenAI-powered product search system for an e-commerce site.
+	•	How would you handle multi-lingual product search?
+	•	How do you build a Q&A bot on top of PDFs?
+	•	How do you deal with private data security in GenAI systems?
+	•	How do you evaluate retrieval accuracy? (Precision@k, Recall, MRR)
+
+7. MERN + GenAI Integration (your edge 🚀)
+	•	How would you integrate a GenAI model in a MERN stack app?
+	•	How do you deploy a Node.js GenAI REST API to AWS Lambda (serverless)?
+	•	How do you handle rate-limits and retries for external GenAI APIs?
+	•	How would you design a chat system that uses RAG in real-time?
+
+🎯 Strategy
+	1	Phase 1 (Fundamentals) → Tokens, embeddings, transformers, context windows.
+	2	Phase 2 (Applied) → RAG, fine-tuning, hybrid search, Bedrock Agent.
+	3	Phase 3 (System Design) → Build interview answers around your real projects (OpenSearch + Bedrock).
+
+MongoDB Interview question :
+1. If mongoldb has 4 shard how to we can connect with specific shard
