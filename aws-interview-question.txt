@@ -1,0 +1,128 @@
+🔹 Ways Lambda A → Lambda B Communication
+1. Direct Invocation (via AWS SDK)
+
+Lambda A can call Lambda B directly using the AWS SDK:
+
+const AWS = require("aws-sdk");
+const lambda = new AWS.Lambda();
+
+exports.handler = async (event) => {
+  const response = await lambda
+    .invoke({
+      FunctionName: "LambdaB", // name or ARN of Lambda B
+      InvocationType: "RequestResponse", // sync
+      Payload: JSON.stringify({ foo: "bar" }),
+    })
+    .promise();
+
+  return JSON.parse(response.Payload);
+};
+
+
+InvocationType:
+
+RequestResponse → synchronous, waits for result.
+
+Event → async, just triggers B and returns immediately.
+
+DryRun → only checks if A is allowed to invoke B.
+
+✅ Pros: Simple, fast, no API Gateway needed.
+⚠️ Cons: Tightly coupled (A must know B’s name/ARN). Works only inside AWS.
+
+2. Through API Gateway (HTTP call)
+
+Lambda B can be fronted by API Gateway.
+Then Lambda A calls it using axios, fetch, etc.:
+
+const fetch = require("node-fetch");
+
+exports.handler = async () => {
+  const response = await fetch("https://<api-id>.execute-api.us-east-1.amazonaws.com/dev/lambdaB", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ foo: "bar" }),
+  });
+
+  return await response.json();
+};
+
+
+✅ Pros: Loose coupling, cross-service or cross-cloud friendly, built-in auth (Cognito/JWT).
+⚠️ Cons: Slightly slower (API Gateway latency), you pay for API Gateway.
+
+3. Event-Driven via SQS, SNS, or EventBridge
+
+Instead of calling directly, Lambda A can publish an event/message:
+
+SNS → pub/sub, multiple Lambdas can subscribe.
+
+SQS → queue, guarantees delivery to Lambda B.
+
+EventBridge → routing rules, decoupled event-driven architecture.
+
+Example with SNS:
+
+const AWS = require("aws-sdk");
+const sns = new AWS.SNS();
+
+exports.handler = async () => {
+  await sns.publish({
+    TopicArn: "arn:aws:sns:us-east-1:123456789012:MyTopic",
+    Message: JSON.stringify({ foo: "bar" }),
+  }).promise();
+};
+
+
+Lambda B subscribes to that SNS topic → it gets invoked automatically.
+
+✅ Pros: Very scalable, decoupled, async.
+⚠️ Cons: Not suitable for synchronous request/response.
+
+4. Step Functions (Workflow Orchestration)
+
+If Lambda A and Lambda B are part of a workflow:
+
+{
+  "Comment": "Step Function example",
+  "StartAt": "LambdaA",
+  "States": {
+    "LambdaA": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:123456789012:function:LambdaA",
+      "Next": "LambdaB"
+    },
+    "LambdaB": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:123456789012:function:LambdaB",
+      "End": true
+    }
+  }
+}
+
+
+✅ Pros: Visual workflows, retries, error handling.
+⚠️ Cons: More moving parts, added cost.
+
+🔹 Summary
+
+Direct Invoke (AWS SDK) → fastest, AWS-only, tight coupling.
+
+API Gateway → external clients + cross-service comms, looser coupling.
+
+SNS/SQS/EventBridge → async, decoupled, scalable.
+
+Step Functions → orchestration, retries, workflows.
+
+✅ So Lambda A can talk to Lambda B either synchronously (SDK/API Gateway) or asynchronously (SNS/SQS/EventBridge).
+
+
+Ques : let suppose if I have microservice A => microservice B => microservice C => microservice D all are communicating sequentially if any one got failed we have to roll back my work entirely how I can do it in above case?
+Ans : 
+✅ Summary:
+
+    You solve rollback with Saga pattern (compensating transactions).
+    In AWS → best tool is Step Functions as an orchestrator.
+    Alternative → Event-driven choreography.
+
+

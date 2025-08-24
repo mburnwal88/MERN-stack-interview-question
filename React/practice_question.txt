@@ -1,0 +1,149 @@
+📝 Coding Exercises – Optimize Unnecessary Re-renders
+Exercise 1: Prevent Child Re-renders with React.memo
+
+import React, { useState } from "react";
+
+const Child = ({ value }) => {
+  console.log("Child re-rendered");
+  return <div>Child Value: {value}</div>;
+};
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+
+      {/* ✅ Problem: Child re-renders even when count changes */}
+      <Child value="Static Prop" />
+    </div>
+  );
+}
+👉 Task: Optimize so Child does not re-render when count changes.
+💡 Hint: Wrap Child with React.memo.
+
+
+Exercise 2: Fix Function Prop Causing Re-renders
+
+import React, { useState } from "react";
+
+const Child = ({ onClick }) => {
+  console.log("Child re-rendered");
+  return <button onClick={onClick}>Click Me</button>;
+};
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    console.log("Button clicked");
+  };
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <Child onClick={handleClick} />
+    </div>
+  );
+}
+
+👉 Task:
+    Child re-renders because handleClick is a new function on each render.
+    Fix it so Child only re-renders when necessary.
+        💡 Hint: Use useCallback.
+
+
+Exercise 3: Optimize Expensive Calculation
+
+import React, { useState } from "react";
+
+function expensiveCalculation(num) {
+  console.log("Running expensive calculation...");
+  for (let i = 0; i < 1e7; i++) {}
+  return num * 2;
+}
+
+export default function App() {
+  const [count, setCount] = useState(0);
+  const [text, setText] = useState("");
+
+  const result = expensiveCalculation(count);
+
+  return (
+    <div>
+      <h1>Result: {result}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <input value={text} onChange={(e) => setText(e.target.value)} />
+    </div>
+  );
+}
+
+👉 Task:
+    Every keystroke in input re-triggers expensive calculation.
+    Optimize so calculation only runs when count changes.
+        💡 Hint: Use useMemo.
+
+
+Exercise 4: Optimize List Rendering with Keys
+import React, { useState } from "react";
+
+export default function App() {
+  const [items, setItems] = useState(["Apple", "Banana", "Cherry"]);
+
+  const shuffle = () => {
+    setItems([...items].reverse());
+  };
+
+  return (
+    <div>
+      <button onClick={shuffle}>Shuffle</button>
+      <ul>
+        {items.map((item) => (
+          // ❌ Problem: React can't optimize reordering without proper keys
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+👉 Task:
+    Fix unnecessary re-renders when list is shuffled.
+        💡 Hint: Add a unique key for each item.
+
+
+Exercise 5: Context Optimization
+import React, { createContext, useContext, useState } from "react";
+
+const AppContext = createContext();
+
+const ChildA = () => {
+  console.log("Child A rendered");
+  const { count } = useContext(AppContext);
+  return <h2>Count: {count}</h2>;
+};
+
+const ChildB = () => {
+  console.log("Child B rendered");
+  return <h2>Static Child</h2>;
+};
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <AppContext.Provider value={{ count }}>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <ChildA />
+      <ChildB />
+    </AppContext.Provider>
+  );
+}
+
+👉 Task:
+    ChildB re-renders even though it doesn’t use context.
+    Optimize so only ChildA re-renders on count change.
+        💡 Hint: Split Context or wrap with React.memo.

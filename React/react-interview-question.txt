@@ -1,0 +1,30 @@
+React:
+
+    Advanced hooks patterns (useCallback, useMemo, custom hooks)
+    State management comparison (Context API, Redux, Zustand)
+    Performance optimization (React.memo, lazy loading, code splitting)
+    Server-side rendering concepts (Next.js familiarity)
+    Testing strategies (Jest, React Testing Library)
+
+At 5 years of experience, interviewers expect you to:
+
+    Have deep knowledge of React internals (hooks, context, lifecycle, reconciliation).
+    Be comfortable with architecture-level decisions (state management, code splitting, performance optimization).
+    Understand integration with ecosystem tools (Redux, React Query, testing libraries, bundlers).
+    Be able to mentor juniors and explain trade-offs.
+
+Q3. What are Suspense and Concurrent Mode?
+Q7. How do you optimize a React app that is slow?
+👉 Steps:
+    Use React Profiler.
+    Memoize components.
+    Avoid anonymous functions in render.
+    Virtualize long lists (react-window).
+    Code-splitting (React.lazy).
+    Optimize bundle size (tree-shaking).
+
+Q10. What are React render phases?
+👉 Two main phases:
+    Render phase (pure & can be paused/resumed): React builds the work-in-progress fiber tree.
+    Commit phase (synchronous, cannot be interrupted): React applies DOM mutations, refs, lifecycle hooks (componentDidMount, useLayoutEffect).
+

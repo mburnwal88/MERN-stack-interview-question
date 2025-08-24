@@ -1,0 +1,27 @@
+Q1. How do you implement lazy loading in React?
+👉 Using React.lazy and Suspense:
+
+const Dashboard = React.lazy(() => import('./Dashboard'));
+
+function App() {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <Dashboard />
+    </Suspense>
+  );
+}
+
+Q2. Benefits of lazy loading?
+👉 Answer :
+    Smaller initial bundle size.
+    Faster initial load.
+    Loads only when needed (code splitting).
+
+Q3. How is dynamic import different from lazy loading?
+👉 Answer :
+    Dynamic import → JavaScript feature (import()) to load modules at runtime.
+    React.lazy → built on top of dynamic import for components.
+
+
+
+

@@ -1,0 +1,2 @@
+Q1. What is Redux Toolkit?
+Q2. Why Redux Toolkit over classic Redux?

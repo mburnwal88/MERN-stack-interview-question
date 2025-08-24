@@ -1,0 +1,39 @@
+Q1. What is React Profiler and why is it useful?
+👉 React Profiler (in React DevTools) measures:
+    How often components render.
+    How long renders take.
+    Which props/state triggered a render.
+        👉 Helps find performance bottlenecks.
+
+Q2. How do you use React Profiler?
+👉 Wrap component in <Profiler>:
+
+import { Profiler } from 'react';
+
+function App() {
+  const callback = (id, phase, actualDuration) => {
+    console.log({ id, phase, actualDuration });
+  };
+
+  return (
+    <Profiler id="App" onRender={callback}>
+      <MyComponent />
+    </Profiler>
+  );
+}
+id → identifier of component.
+phase → "mount" or "update".
+actualDuration → time spent rendering.
+
+Q4. How do you identify unnecessary re-renders with Profiler?
+👉 Look for:
+    Components re-rendering when props/state didn’t change.
+    Very frequent renders in short time (due to context or parent updates).
+
+
+
+
+
+
+
+

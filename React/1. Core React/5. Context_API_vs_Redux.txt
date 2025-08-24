@@ -1,0 +1,46 @@
+Q1. What problem does the Context API solve in React?
+👉 Answer :
+    Context API solves prop drilling (passing props through multiple nested components).
+    Example: If Theme or Auth info is needed deep down, Context provides it without manually forwarding props.
+
+
+Q2. What are the limitations of the Context API?
+👉 Answer :
+    Causes unnecessary re-renders: when context value changes, all consumers re-render.
+    Not designed for complex state logic (multiple reducers, async updates).
+    Lacks middleware, time-travel debugging, and DevTools that Redux provides.
+
+Q3. How does Redux differ from Context API in state updates?
+👉 Answer :
+    Context API: re-renders all consumers when value changes.
+    Redux: uses a central store with selectors → only subscribed components re-render, not the entire tree.
+
+Q4. How does performance differ between Context API and Redux?
+👉 Answer :
+    Context → good for small apps, but scales poorly because re-render spreads across all consumers.
+    Redux → scales better since it can subscribe only specific slices of state.
+
+Q5. Can you combine Context API and Redux?
+👉 Answer :
+Yes. Example:
+    Use Redux for business logic & app-wide state.
+    Use Context API for UI-related state (theme, layout direction).
+
+
+Q6. How does React Query (or TanStack Query) compare with Context & Redux?
+👉 Answer :
+    Redux = best for client-side state.
+    React Query = best for server-side state (API fetching, caching, revalidation).
+    Context = good for passing values (theme, auth).
+
+Q7. Example scenario – choose Context or Redux?
+👉 Answer :
+    Authentication info (user, token, role) → Context API (simple global).
+    Shopping Cart in e-commerce (async APIs, multiple reducers, persistence) → Redux.
+    Theme switcher (dark/light) → Context API.
+    Notifications system with API sync → Redux or React Query.
+
+
+
+
+

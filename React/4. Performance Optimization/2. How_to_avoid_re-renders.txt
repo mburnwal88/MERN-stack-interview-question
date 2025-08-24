@@ -1,0 +1,26 @@
+Q1. How does React.memo work?
+👉 Answer : 
+Wraps a component → prevents re-render unless props change.
+const Child = React.memo(({ value }) => {
+  console.log("Rendered");
+  return <p>{value}</p>;
+});
+
+Q2. Difference between useCallback and useMemo?
+👉 Answer :
+    useCallback(fn, deps) → memoizes a function reference.
+    useMemo(fn, deps) → memoizes the result of a function.
+
+Q3. Example: Preventing child re-renders with useCallback
+
+Q4. When should you avoid React.memo?
+👉 Avoid when component is small and cheap to render → extra comparison may cost more than just re-rendering.
+
+
+
+
+
+
+
+
+

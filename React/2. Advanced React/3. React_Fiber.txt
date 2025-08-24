@@ -1,0 +1,13 @@
+How rendering works.
+
+Q1. What is React Fiber?
+👉 Answer: Fiber is the reconciliation engine introduced in React 16. It allows React to:
+    Break rendering work into small units.
+    Pause, resume, or abort work.
+    Prioritize updates (high-priority user input vs low-priority rendering).
+
+Q3. What are the phases in React Fiber?
+👉 Answer :
+    Render Phase → creates work-in-progress fiber tree (can be paused, async).
+    Commit Phase → applies changes to DOM (sync, cannot be interrupted).
+

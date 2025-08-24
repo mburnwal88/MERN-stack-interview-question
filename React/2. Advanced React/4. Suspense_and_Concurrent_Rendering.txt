@@ -1,0 +1,12 @@
+Q1. What is React Suspense?
+👉 Answer : Suspense lets components wait for something (like data or code) before rendering. You provide a fallback UI until the resource is ready.
+
+Q2. What is Concurrent Rendering?
+👉 Answer :  Concurrent rendering (React 18+) allows React to interrupt, pause, or drop renders to keep UI responsive.
+
+Q3. Example of Suspense for code splitting?
+Answer : 
+const Profile = React.lazy(() => import("./Profile"));
+<Suspense fallback={<div>Loading...</div>}>
+  <Profile />
+</Suspense>

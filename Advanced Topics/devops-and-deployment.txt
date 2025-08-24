@@ -1,0 +1,7 @@
+DevOps & Deployment:
+
+    CI/CD pipeline setup
+    Docker containerization
+    Cloud deployment (AWS, Azure, or GCP)
+    Environment management and configuration
+    Monitoring and logging strategies

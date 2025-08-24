@@ -1,0 +1,6 @@
+Scalability Patterns:
+
+    Load balancing and horizontal scaling strategies
+    Database scaling (read replicas, sharding)
+    Caching layers (Redis, CDN strategies)
+    Message queues and pub/sub patterns

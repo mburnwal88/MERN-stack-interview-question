@@ -1,0 +1,21 @@
+Q1. What is memoization in React and why is it useful?
+👉 Memoization caches results of expensive calculations or renders, so React can reuse them instead of recalculating every time. It helps performance when props/state don’t change often.
+
+Q2. How do you memoize a function or component in React?
+👉 Answer :
+    React.memo → memoizes functional components.
+    useMemo → memoizes expensive computed values.
+    useCallback → memoizes function references.
+
+
+
+
+
+
+
+
+
+
+
+
+

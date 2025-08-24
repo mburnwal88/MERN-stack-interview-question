@@ -1,0 +1,13 @@
+React.lazy, Suspense
+
+Q1. What is code splitting in React?
+👉 Answer : Splitting bundles into smaller chunks so the browser only loads what’s needed. Improves performance.
+
+Q2. How do React.lazy and Suspense work together?
+👉 Answer : 
+    React.lazy → dynamically import a component.
+    Suspense → provides a fallback UI while the component loads.
+
+Q3. Other ways of code splitting besides React.lazy?
+👉 Answer : Webpack’s import(), dynamic imports, libraries like loadable-components.
+

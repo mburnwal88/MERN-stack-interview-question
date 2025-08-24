@@ -1,0 +1,7 @@
+MongoDB:
+
+    Advanced aggregation pipelines and optimization techniques
+    Indexing strategies, compound indexes, and query performance tuning
+    Schema design patterns, embedding vs referencing decisions
+    Transactions, replica sets, and sharding concepts
+    Memory management and connection pooling

@@ -1,0 +1,60 @@
+Node.js:
+
+    Event loop, clustering, and worker threads
+    Stream processing and buffer management
+    Package management and security (npm audit, dependency management)
+    Microservices architecture patterns
+    Debugging and profiling techniques
+
+
+
+Q3. How do you scale a Node.js application?
+A3.
+    Vertical scaling: Increase CPU/RAM.
+    Horizontal scaling: Run multiple instances behind a load balancer.
+    Use Node.js cluster or PM2 for multi-core utilization.
+    Deploy with Docker + Kubernetes for auto-scaling.
+    Cache frequently accessed data with Redis.
+    Use CDNs for static content.
+
+
+Performance & Monitoring
+Q5. How do you debug a memory leak in Node.js?
+A5.
+    Use --inspect with Chrome DevTools.
+    Capture heap snapshots.
+    Look for detached DOMs, unreferenced closures.
+    Use clinic.js or 0x for flamegraphs.
+    Monitor memory usage via process.memoryUsage().
+
+
+Q6. How to optimize Node.js for high throughput APIs?
+
+Avoid synchronous/blocking calls.
+Use clustering to utilize all CPU cores.
+Cache DB queries with Redis.
+Use streaming for large data (instead of buffering).
+Use load balancer (NGINX/HAProxy).
+Apply backpressure handling.
+
+
+Security
+Q7. How do you prevent common Node.js security vulnerabilities?
+
+Use Helmet.js for headers.
+Validate input (Joi, Zod).
+Escape user inputs (prevent XSS, SQLi).
+Rotate JWT secrets, use refresh tokens.
+Implement rate limiting & circuit breaker.
+Avoid eval, sanitize JSON parsing.
+
+
+
+
+
+
+
+
+
+
+

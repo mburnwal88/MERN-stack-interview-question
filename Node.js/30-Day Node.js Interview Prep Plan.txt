@@ -1,0 +1,144 @@
+📅 30-Day Node.js Interview Prep Plan (Senior – 8 Yrs)
+Week 1 – Node.js Internals & Core Fundamentals
+
+👉 Goal: Master event loop, async patterns, internals, debugging.
+
+Day 1: Event loop deep dive
+    Study phases (timers, I/O, poll, check).
+    Practice: Write code comparing setImmediate, process.nextTick, setTimeout.
+    Q: “Difference between microtasks & macrotasks in Node.js?”
+
+Day 2: Asynchronous programming
+    Callbacks vs Promises vs async/await.
+    Practice: Convert callback-based FS API to Promises.
+    Q: “How does async/await work internally in Node.js?”
+
+Day 3: Streams & Buffers
+    Readable, Writable, Duplex, Transform streams.
+    Practice: Create a gzip file compressor using streams.
+    Q: “How does backpressure work in Node.js streams?”
+
+Day 4: Cluster & Worker Threads
+    Learn difference between multi-process vs multi-thread.
+    Practice: Build an HTTP server using cluster module.
+    Q: “When would you use worker threads over cluster?”
+
+Day 5: Error handling
+    Centralized error handling, async errors.
+    Practice: Global error middleware in Express.
+    Q: “How do you handle uncaughtException & unhandledRejection?”
+
+Day 6: Node.js internals (libuv, V8, GC)
+    Learn about libuv thread pool.
+    Practice: Profile event loop lag with clinic.
+    Q: “How does libuv handle file system vs networking?”
+
+Day 7: Mock Interview + Recap
+Cover Days 1–6 questions.
+Write mini-notes for each.
+
+Week 2 – Backend Architecture & Scaling
+👉 Goal: API design, caching, scaling strategies.
+
+Day 8: REST API best practices
+    Study: versioning, pagination, filtering.
+    Practice: Build a small CRUD API with Express.
+    Q: “How do you handle API versioning in production?”
+
+Day 9: GraphQL basics
+    Practice: Set up Apollo Server with Node.js.
+    Q: “REST vs GraphQL — when to choose what?”
+
+Day 10: Microservices architecture
+    Study: service discovery, API Gateway.
+    Practice: Design 3 microservices with communication via events.
+    Q: “How do services communicate without tight coupling?”
+
+Day 11: Message Queues (Kafka, RabbitMQ, SQS)
+    Practice: Publish/subscribe example with Redis Pub/Sub.
+    Q: “Why use event-driven architecture in Node.js?”
+
+Day 12: Caching & performance
+    Study: Redis, in-memory cache, CDN.
+    Practice: Implement Redis cache for API responses.
+    Q: “How do you invalidate cache efficiently?”
+
+Day 13: Scaling Node.js apps
+    Study: Horizontal vs vertical scaling.
+    Practice: Load test with autocannon.
+    Q: “How do you scale WebSocket connections?”
+
+Day 14: Mock Interview + Recap
+    Focus: scaling, caching, API patterns.
+
+
+Week 3 – Databases, Security, Testing
+👉 Goal: Show strong database, security, and testing expertise.
+
+Day 15: SQL vs NoSQL
+    Study: trade-offs, indexing.
+    Practice: Optimize MongoDB query with index.
+    Q: “When would you choose MongoDB over PostgreSQL?”
+
+Day 16: Transactions & consistency
+    Study: ACID vs BASE.
+    Practice: Implement DB transactions with Sequelize/TypeORM.
+    Q: “How do you handle distributed transactions?”
+
+Day 17: Security I (Auth, JWT, OAuth2)
+    Practice: Implement JWT auth with refresh tokens.
+    Q: “How do you handle token expiration at scale?”
+
+Day 18: Security II (OWASP, best practices)
+    Study: XSS, CSRF, SQL Injection.
+    Practice: Secure Express app with Helmet.js.
+    Q: “How do you prevent CSRF in REST APIs?”
+
+Day 19: Testing I (Unit, Integration)
+    Practice: Write Jest tests for Express routes.
+    Q: “What’s the difference between integration & E2E tests?”
+
+Day 20: Testing II (E2E, CI/CD)
+    Practice: Use Supertest + Jest for API tests.
+    Q: “How do you integrate tests in CI/CD?”
+
+Day 21: Mock Interview + Recap
+    Focus: DB, auth, security, testing.
+
+Week 4 – DevOps, Monitoring, System Design
+👉 Goal: Cloud, monitoring, advanced system design.
+
+Day 22: CI/CD pipelines
+    Study: GitHub Actions, GitLab CI, Jenkins.
+    Practice: Build Node.js pipeline (lint → test → deploy).
+    Q: “How do you achieve zero-downtime deployment?”
+
+Day 23: Observability (logging, metrics, tracing)
+    Study: Winston, Pino, OpenTelemetry.
+    Practice: Add structured logging to Node app.
+    Q: “Logs vs Metrics vs Tracing — difference?”
+
+Day 24: Monitoring & profiling
+    Study: ELK, Prometheus + Grafana.
+    Practice: Add Prometheus metrics to Node.js app.
+    Q: “How do you debug memory leaks in production?”
+
+Day 25: System Design I (Chat App)
+    Design: Real-time chat with WebSockets, Redis, MongoDB.
+    Q: “How do you scale WebSockets across multiple servers?”
+
+Day 26: System Design II (E-commerce API)
+    Design: Product catalog, cart, order service, payment integration.
+    Q: “How do you handle eventual consistency in orders?”
+
+Day 27: System Design III (Video Streaming Service)
+    Design: CDN, chunked uploads, adaptive streaming.
+    Q: “How do you design video streaming with Node.js?”
+
+Day 28: System Design IV (Rate Limiting & Throttling)
+    Practice: Implement Redis-based rate limiter.
+    Q: “Difference between rate limiting & throttling?”
+
+Day 29: Final Mock Interview (Full system design + core questions)
+
+Day 30: Review notes, weak areas, revise Q&A.

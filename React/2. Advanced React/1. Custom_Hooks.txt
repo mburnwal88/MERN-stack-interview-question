@@ -1,0 +1,10 @@
+Q1. What is a custom hook in React?
+👉 Answer:  A custom hook is a JavaScript function that starts with "use" and allows you to extract reusable stateful logic.
+
+Q2. Why would you create a custom hook?
+👉 Answer: To share logic between components (e.g., auth, API calls, form validation) without duplicating code.
+
+
+
+
+

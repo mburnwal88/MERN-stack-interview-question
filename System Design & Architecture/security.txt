@@ -1,0 +1,7 @@
+Security:
+
+    Authentication/authorization (JWT, OAuth, session management)
+    Input validation and sanitization
+    SQL injection prevention, XSS protection
+    HTTPS implementation and certificate management
+    API security best practices

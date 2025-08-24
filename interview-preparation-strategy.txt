@@ -1,0 +1,19 @@
+Interview Preparation Strategy
+
+    Practice Coding:
+        Implement common algorithms and data structures
+        Build mini-projects showcasing different patterns
+        Practice explaining your code architecture decisions
+        Review your past projects and be ready to discuss trade-offs made
+
+    Behavioral Questions:
+        Prepare stories about challenging technical problems you've solved
+        Examples of mentoring junior developers or leading technical decisions
+        Times you've had to learn new technologies quickly
+        Conflict resolution and collaboration experiences
+
+    Mock Technical Discussions:
+        Practice explaining complex technical concepts simply
+        Be ready to discuss pros/cons of different architectural approaches
+        Prepare to walk through how you'd design a system from scratch
+        Practice code reviews and discussing code quality

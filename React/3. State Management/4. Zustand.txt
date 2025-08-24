@@ -1,0 +1,38 @@
+Q1. What is Zustand?
+👉 Answer : Zustand is a lightweight state management library for React.
+It uses hooks (useStore) and avoids boilerplate (unlike Redux).
+
+Q2. Example of Zustand store:
+Answer :
+import create from 'zustand';
+
+const useStore = create(set => ({
+  count: 0,
+  increase: () => set(state => ({ count: state.count + 1 })),
+  reset: () => set({ count: 0 })
+}));
+
+function Counter() {
+  const { count, increase, reset } = useStore();
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={increase}>+</button>
+      <button onClick={reset}>Reset</button>
+    </div>
+  );
+}
+
+Q3. How does Zustand differ from Redux?
+👉 Answer :
+    Zustand → less boilerplate, simpler API, no reducers/actions separation.
+    Redux → more structure, ecosystem support, debugging tools.
+
+Q4. When would you prefer Zustand over Redux Toolkit?
+👉 Answer :
+    Small/medium apps → Zustand (fewer lines, quick setup).
+    Large apps with complex flows → Redux Toolkit (structure, DevTools, middleware).
+
+
+
+

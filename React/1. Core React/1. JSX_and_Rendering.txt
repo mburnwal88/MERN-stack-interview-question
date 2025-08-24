@@ -1,0 +1,38 @@
+Q1. Explain how React’s reconciliation algorithm works.
+👉 React uses the Fiber architecture to break rendering into units of work. It compares the Virtual DOM tree with the previous one (diffing).
+    If element type changes → destroy & recreate.
+    If type same → reuse and update props.
+    Keys help React efficiently reconcile lists.
+
+Q8. What are controlled and uncontrolled rendering in React?
+👉 Answer:
+    Controlled Rendering → when React fully controls the DOM element state (e.g., controlled input with value prop).
+    Uncontrolled Rendering → DOM itself maintains the state (ref used to access values).
+
+Q9. What is the role of key in list rendering?
+👉 Answer:
+    key helps React identify elements between renders.
+    Prevents unnecessary re-renders by allowing React’s diffing algorithm to match elements correctly.
+    Without key, React may re-create DOM nodes → performance issues.
+
+Q. What will happen if we add key attribute in all elements?
+👉 Answer:
+
+Q10. Difference between server-side rendering (SSR) and client-side rendering (CSR) in React?
+👉 Answer:
+    CSR: Browser loads JS bundle → React builds DOM → slower first paint but faster navigation.
+    SSR: Server sends pre-rendered HTML + JS → faster first paint, better SEO.
+
+Q11. What is hydration in React?
+👉 Answer:
+    Hydration is the process where React attaches event listeners and makes a pre-rendered (SSR) HTML page interactive on the client.
+
+Q12. How does React batch rendering updates?
+👉 Answer:
+    React batches state updates inside event handlers to reduce re-renders.
+    In React 18 (Concurrent Mode), batching happens everywhere (including promises, async calls).
+
+
+
+
+

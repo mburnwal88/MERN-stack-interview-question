@@ -1,0 +1,8 @@
+Q1. What’s the difference between local and global state?
+👉 Answer :
+    Local State → data needed only within a single component (e.g., input value, toggle, modal open/close). Managed with useState or useReducer.
+    Global State → data needed across multiple components (e.g., user auth, theme, cart items). Managed with Context API, Redux, Zustand, etc.
+
+
+
+

@@ -1,0 +1,14 @@
+Used For server state management
+
+Q1. What problem does React Query solve?
+👉 Answer : React Query manages server state (data from API).
+It provides:
+    Caching
+    Automatic refetching
+    Background updates
+    Stale-while-revalidate
+
+Q2. Difference between client state vs server state?
+👉 Answer :
+    Client state → UI-specific (selected tab, form input).
+    Server state → remote data (fetched from API, may change outside app).

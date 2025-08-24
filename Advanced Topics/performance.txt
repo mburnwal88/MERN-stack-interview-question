@@ -1,0 +1,7 @@
+Performance:
+
+    Database query optimization
+    Frontend performance metrics (Core Web Vitals)
+    API response time optimization
+    Memory leak detection and prevention
+    Bundle size optimization

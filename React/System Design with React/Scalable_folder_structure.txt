@@ -1,0 +1,45 @@
+Q2. What are some common folder structure patterns in React?
+👉 Answer :
+1. By Type (Layered) → organize by file type.
+src/
+  components/
+  hooks/
+  pages/
+  utils/
+  services/
+
+2. By Feature (Domain-driven) → organize by feature/module.
+src/
+  features/
+    auth/
+      components/
+      hooks/
+      services/
+    dashboard/
+      components/
+      api/
+  shared/
+    components/
+    hooks/
+
+Q3. Which folder structure would you choose for a large-scale React app?
+Answer :
+src/
+ ├── app/               # Root app setup (store, routes, global config)
+ ├── features/
+ │    ├── auth/
+ │    │     ├── api/
+ │    │     ├── components/
+ │    │     ├── hooks/
+ │    │     └── slices/   # redux or zustand slice
+ │    ├── dashboard/
+ │    │     ├── api/
+ │    │     └── components/
+ ├── shared/
+ │    ├── components/     # Button, Modal, etc
+ │    ├── hooks/
+ │    └── utils/
+
+
+
+

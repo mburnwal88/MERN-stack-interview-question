@@ -1,0 +1,70 @@
+Q1. What is the Virtual DOM in React? Why is it used?
+👉 Answer :
+    The Virtual DOM (VDOM) is an in-memory lightweight representation of the actual DOM.
+    React keeps two versions: the previous VDOM and the new VDOM.
+    On updates, React compares both (diffing) → applies minimal changes to the real DOM.
+    Benefit: DOM manipulation is expensive, but object comparisons in memory are cheap.
+
+Q2. What is Reconciliation in React?
+👉 Answer :
+Reconciliation is the process React uses to update the DOM when a component’s state/props change.
+Steps:
+    React renders a new Virtual DOM tree.
+    React compares it with the previous tree (diffing).
+    React finds the minimal set of changes.
+    React updates the real DOM in the commit phase.
+
+Q3. How does React’s Diffing Algorithm work?
+👉 Answer : React uses a heuristic O(n) algorithm instead of comparing trees node-by-node (which would be O(n³)).
+Rules:
+    1. Different element type → destroy & recreate.
+        <div> → <span> // entire node replaced
+    
+    2. Same type → update props & keep child nodes.
+        <button class="red"> → <button class="blue">
+
+    3. Lists → keys help identify elements.
+        o. Without keys → React may re-render or reorder incorrectly.
+        o. With stable keys → React reuses existing DOM nodes.
+
+
+Q4. What is the role of “keys” in reconciliation?
+👉 Answer :
+    Keys tell React which items in a list are the same between renders.
+    Without keys → React re-creates DOM nodes unnecessarily.
+    With keys → React only moves/updates changed items.
+
+Q5. What happens if keys are missing or incorrect in lists?
+
+👉 Answer :
+React falls back to index-based keys.
+Problems:
+    Causes unnecessary re-renders.
+    Loses state (e.g., input losing focus on reordering).
+
+Q6. What are the phases of React rendering in reconciliation?
+👉 Answer: Two phases:
+    1. Render phase (diffing phase)
+        Build a new Fiber tree.
+        Can be interrupted, paused, resumed.
+        Pure calculation → no DOM changes yet.
+
+    2. Commit phase
+        Apply changes to the DOM.
+        Runs synchronously → cannot be interrupted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

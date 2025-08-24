@@ -1,0 +1,74 @@
+Q1. How does useState work internally?
+Q2. Why is state update async in React?
+Q3. Difference between useEffect and useLayoutEffect?
+👉 Answer :
+    useEffect: runs asynchronously after paint → doesn’t block UI.
+    useLayoutEffect: runs synchronously after DOM mutations but before paint → can block UI.
+        💡 Rule: Use useEffect unless you need to measure DOM size/layout before paint.
+
+Q4. What happens if you don’t pass a dependency array in useEffect?
+👉 The effect runs after every render.
+    []: runs once (like componentDidMount).
+    [dep]: runs only when dep changes.
+
+Q5. What problem does useContext solve?
+👉 Avoids prop drilling (passing props down multiple levels).
+Instead, any component can consume data from a context provider.
+
+Q6. Why does updating context re-render all consumers? How to optimize?
+👉 When the context value changes, all consumers re-render.
+💡 Optimization:
+    Split contexts (AuthContext, ThemeContext).
+    Wrap consumers in React.memo.
+
+Q7. When to use useReducer instead of useState?
+👉 Use useReducer when:
+    State logic is complex (multiple values).
+    Next state depends on previous state.
+    You want a Redux-like reducer pattern.
+
+Q8. Difference between useMemo and useEffect?
+👉
+    useMemo: memoizes computed value.
+    useEffect: runs side effects (like API calls, subscriptions).
+
+Q9. When should you avoid useMemo?
+👉 Don’t overuse. If computation is cheap, useMemo adds overhead (memory + complexity).
+Use only for expensive calculations or when preventing unnecessary re-renders.
+
+Q10. Difference between useMemo and useCallback?
+👉
+    useMemo(fn, deps) → returns cached result of fn.
+    useCallback(fn, deps) → returns cached function reference.
+
+Q11. Why is useCallback needed in React?
+👉 Functions in JS are new objects each render → causes child re-renders if passed as props.
+useCallback keeps the same reference until deps change.
+
+Q12. What are the use cases of useRef?
+1. Access DOM elements directly.
+    Example :
+        const inputRef = useRef();
+        <input ref={inputRef} />
+        inputRef.current.focus();
+
+2. Store mutable values that don’t trigger re-render.
+    Example : 
+        const count = useRef(0);
+        count.current += 1; // Won't re-render
+
+3. Hold previous state or value across renders.
+
+
+Q13. Difference between useRef and useState?
+👉
+    useRef: mutable value, does not trigger re-render.
+    useState: immutable value, triggers re-render when changed.
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+Q3. How do you cache API data in React?
+👉 Answer :
+Local caching: useState + useEffect (basic).
+Session/LocalStorage: simple persistence.
+React Query / TanStack Query → automatic caching, invalidation, background refetch.
+Redux Toolkit Query (RTK Query) → normalized caching at Redux store level.
